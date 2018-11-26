@@ -1,0 +1,54 @@
+<div class="topbar{{current_class}}">
+  <div class="topbar-left">
+    <a class="topbar-link" (click)="changeMenu()">
+      <span class="icon-dark-gray topbar-icon">
+        <i class="ti-menu"></i>
+      </span>
+    </a>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-right-alert">
+      <span class="topbar-counter">{{counter}}</span>
+      <a class="topbar-link">
+       <span class="icon-gray topbar-icon">
+            <i class="ti-bell"></i>
+        </span>
+      </a>
+    </div>
+    <div class="topbar-right-user-info">
+      <a class="topbar-link" (click)="changeMenuSettings()">
+        <div class="topbar-right-info">
+          <img class="topbar-right-info" src="{{picture}}" alt="{{fullName}}">
+        </div>
+       <div class="topbar-right-user">{{fullName}}</div>
+      </a>
+    </div>
+
+    <div class="topbar-user-menu{{current_class_settings}}" (mouseout)="hideMenuSettings()" (mouseover)="showMenuSettings()">
+        <div class="topbar-user-menu-item">
+          <a class="topbar-user-menu-link">
+            <div class="topbar-user-menu-item-logo">
+              <span class="icon-gray topbar-user-menu-icon">
+                  <i class="ti-settings"></i>
+              </span>
+            </div>
+            <div class="topbar-user-menu-item-text">
+                Settings
+            </div>
+          </a>
+        </div>
+        <div class="topbar-user-menu-item">
+          <a class="topbar-user-menu-link">
+            <div class="topbar-user-menu-item-logo">
+              <span class="icon-gray topbar-user-menu-icon">
+                  <i class="ti-power-off"></i>
+              </span>
+            </div>
+            <div class="topbar-user-menu-item-text">
+                Logout
+            </div>
+          </a>
+        </div>
+    </div>    
+  </div>
+</div>

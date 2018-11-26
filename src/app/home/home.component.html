@@ -1,0 +1,14 @@
+<app-sidebar
+    title="SparkingT"
+    logo="assets/images/logo.png"
+    [options]="options"
+    [eventSidebar]="eventSidebar"
+    (eventTopbar)="onChangeTopbar($event)">
+</app-sidebar>
+<app-topbar
+    [picture]="picture"
+    [fullName]="fullName"
+    [counter]="counter"
+    (eventSidebar)="onChangeSidebar($event)"
+    [eventTopbar]="eventTopbar">
+</app-topbar>
