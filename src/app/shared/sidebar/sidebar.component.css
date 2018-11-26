@@ -2,10 +2,16 @@
 @import url('../../../assets/css/icons.css');
 
 div.sidebar-expanded {
+  z-index: 10;
+  opacity: 1;
   height: 100vh;
   border-right: solid 1px #dddddd;
   font-size: 16px;
+  transition-delay: 0s;    
   color: #aaaaaa;
+  background-color: #ffffff;
+  clear:both;
+  position: fixed;
   width: 250px;
   font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   white-space: nowrap;
@@ -14,7 +20,12 @@ div.sidebar-expanded {
 }
 
 div.sidebar {
+  z-index: 10;
+  opacity: 1;
   height:100vh;
+  background-color: #ffffff;
+  position: fixed;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;  
   border-right: solid 1px #dddddd;
   font-size: 16px;
   color: #aaaaaa;

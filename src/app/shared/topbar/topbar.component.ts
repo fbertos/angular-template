@@ -10,6 +10,8 @@ export class TopbarComponent implements OnInit, OnChanges {
 
   public current_class_settings = '';
 
+  public current_class_alerts = '';
+
   @Input()
   public picture : string;
 
@@ -31,8 +33,6 @@ export class TopbarComponent implements OnInit, OnChanges {
   }
 
   public changeMenu(event: Event): void {
-    console.log('topbar changeMenu before ' + this.current_class);
-
     if (this.current_class === '-collapsed') {
       this.current_class = '';
       this.eventSidebar.emit(new Date().getTime());
@@ -41,42 +41,34 @@ export class TopbarComponent implements OnInit, OnChanges {
       this.current_class = '-collapsed';
       this.eventSidebar.emit(new Date().getTime());
     }
-
-    console.log('topbar changeMenu after ' + this.current_class);
   }
 
   public changeMenuSettings(event: Event): void {
-    console.log('topbar changeMenuSettings before ' + this.current_class_settings);
-
     if (this.current_class_settings === '-visible') {
       this.current_class_settings = '';
     }
     else {
       this.current_class_settings = '-visible';
     }
+  }
 
-    console.log('topbar changeMenuSettings after ' + this.current_class_settings);
+  public hideMenuAlerts(event: Event): void {
+    this.current_class_alerts = '';
+  }
+
+  public showMenuAlerts(event: Event): void {
+    this.current_class_alerts = '-visible';
   }
 
   public hideMenuSettings(event: Event): void {
-    console.log('topbar hideMenuSettings before ' + this.current_class_settings);
-
     this.current_class_settings = '';
- 
-    console.log('topbar hideMenuSettings after ' + this.current_class_settings);
   }
 
   public showMenuSettings(event: Event): void {
-    console.log('topbar showMenuSettings before ' + this.current_class_settings);
-
     this.current_class_settings = '-visible';
- 
-    console.log('topbar showMenuSettings after ' + this.current_class_settings);
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log('topbar ngOnChanges before ' + this.current_class);
-
     for (let propName in changes) {
       if (propName === 'eventTopbar') {
         let evt = changes[propName];
@@ -92,7 +84,5 @@ export class TopbarComponent implements OnInit, OnChanges {
         }
       }
     }
-
-    console.log('topbar ngOnChanges after ' + this.current_class);
   }
 }

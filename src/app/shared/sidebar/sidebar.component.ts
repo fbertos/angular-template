@@ -12,6 +12,8 @@ export class SidebarComponent implements OnInit, OnChanges {
   @Input()
   public logo : string;
 
+  private mode_static = false;
+
   public current_class = '';
 
   @Input()
@@ -29,30 +31,23 @@ export class SidebarComponent implements OnInit, OnChanges {
   }
 
   public expandMenu(event: Event): void {
-    console.log('sidebar expandMenu before ' + this.current_class);
-
-    if (this.current_class === '') {
-      this.current_class = '-expanded'; 
-      this.eventTopbar.emit(new Date().getTime());
+    if (!this.mode_static) {
+      if (this.current_class === '') {
+        this.current_class = '-expanded'; 
+      }
     }
-
-    console.log('sidebar expandMenu before ' + this.current_class);
   }
 
   public collapseMenu(event: Event): void {
-    console.log('sidebar collapseMenu before ' + this.current_class);
-
-    if (this.current_class === '-expanded') {
-      this.current_class = '';
-      this.eventTopbar.emit(new Date().getTime());
+    if (!this.mode_static) {
+      if (this.current_class === '-expanded') {
+        this.current_class = '';
+        //this.eventTopbar.emit(new Date().getTime());
+      }
     }
-
-    console.log('sidebar collapseMenu after ' + this.current_class);
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log('sidebar ngOnChanges before ' + this.current_class);
-
     for (let propName in changes) {
       if (propName === 'eventSidebar') {
         let evt = changes[propName];
@@ -61,14 +56,14 @@ export class SidebarComponent implements OnInit, OnChanges {
         if (typeof value !== "undefined") {
           if (this.current_class === '') {
             this.current_class = '-expanded';
+            this.mode_static = true;
           }
           else {
             this.current_class = '';
+            this.mode_static = false;
           }
         } 
       }
     }
-
-    console.log('sidebar ngOnChanges after ' + this.current_class);
   }
 }

@@ -2,6 +2,7 @@
 @import url('../../../assets/css/icons.css');
 
 .topbar {
+  z-index: 0;
   top: 0px;
   left: 72px;
   height: 62px;
@@ -13,10 +14,10 @@
   position: fixed;
   transition: all 0.2s ease;
   width: calc(100% - 72px);
-  z-index: 800;
 }
 
 .topbar-collapsed {
+  z-index: 0;
   top: 0px;
   left: 254px;
   height: 62px;
@@ -28,10 +29,10 @@
   position: fixed;
   transition: all 0.2s ease;
   width: calc(100% - 254px);
-  z-index: 800;
 }
 
 .topbar-left {
+  z-index: 0;
   width: 15%;
   height: 100%;
   position: absolute;
@@ -40,6 +41,7 @@
 }
 
 .topbar-right {
+  z-index: 0;
   width: 85%;
   height: 100%;
   text-align: right;
@@ -215,8 +217,111 @@ img.topbar-right-info {
   background: #ffffff;
 }
 
-
 .topbar-user-menu-icon {
+  vertical-align: middle;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 17px;
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 35px;
+}
+
+.topbar-alert-menu {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;  
+  left: 73%;
+  top: 50px;
+  height: 140px;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+.topbar-alert-menu-visible {
+  position: absolute;
+  visibility: visible;
+  left: 73%;
+  top: 50px;
+  height: 140px;
+  width: 260px;
+  background: #ffffff;
+  opacity: 1;
+  transition-delay: 0s;  
+  border: 1px solid #dddddd;
+}
+
+.topbar-alert-menu-link {
+  position: absolute;
+  font-size: 15px;
+  color: #777777;
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  font-size: 12px;
+  font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.topbar-alert-menu-link:hover {
+  position: absolute;
+  font-size: 15px;
+  color: #111111;
+  text-decoration: none;
+  text-align: left;
+  left: 0px;
+  width: 100%;
+  top: 0px;
+  font-size: 12px;
+  font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.topbar-alert-menu-item {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 35px;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.topbar-alert-menu-item-logo {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 20%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.topbar-alert-menu-item-text {
+  position: absolute;
+  left: 20%;
+  top: 8px;
+  height: 27px;
+  width: 80%;
+  background: #ffffff;
+}
+
+.topbar-alert-menu-item-title {
+  position: absolute;
+  font-weight: bold;
+  left: 20%;
+  top: 8px;
+  height: 27px;
+  width: 80%;
+  background: #ffffff;
+}
+
+.topbar-alert-menu-icon {
   vertical-align: middle;
   border-radius: 6px;
   display: inline-block;
