@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,9 @@ export class HomeComponent implements OnInit {
     { "title": "Monitor", "icon": "ti-eye", "color": "icon-black", "url": "monitor" }
   ];
 
-  constructor() { }
+  constructor(private session: SessionService) {
+    session.checkSession();
+  }
 
   ngOnInit() {
   }
@@ -38,6 +41,5 @@ export class HomeComponent implements OnInit {
   public onChangeSidebar(value) { 
     this.eventSidebar = new Date().getTime();
   }
-
 }
 

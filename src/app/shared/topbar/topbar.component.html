@@ -9,7 +9,7 @@
   <div class="topbar-right">
     <div class="topbar-right-alert">
       <span class="topbar-counter">{{counter}}</span>
-      <a class="topbar-link">
+      <a class="topbar-link" (click)="changeMenuAlerts()">
        <span class="icon-gray topbar-icon">
             <i class="ti-bell"></i>
         </span>
@@ -38,7 +38,7 @@
           </a>
         </div>
         <div class="topbar-user-menu-item">
-          <a class="topbar-user-menu-link">
+          <a class="topbar-user-menu-link" (click)="logout()">
             <div class="topbar-user-menu-item-logo">
               <span class="icon-gray topbar-user-menu-icon">
                   <i class="ti-power-off"></i>
@@ -50,26 +50,16 @@
           </a>
         </div>
     </div>
-    <div class="topbar-alert-menu{{current_class_settings}}" (mouseout)="hideMenuAlerts()" (mouseover)="showMenuAlerts()">
-        <div class="topbar-alert-menu-item">
-          <div class="topbar-alert-menu-item-logo">
-            <span class="icon-gray topbar-alert-menu-icon">
-                <i class="icon-gray ti-bell"></i>
-            </span>
-          </div>
-          <div class="topbar-alert-menu-item-title">
-              Notifications
-          </div>
-        </div>
-        <div class="topbar-alert-menu-item">
+    <div class="topbar-alert-menu{{current_class_alerts}}" (mouseout)="hideMenuAlerts()" (mouseover)="showMenuAlerts()">
+        <div class="topbar-alert-menu-header">
           <a class="topbar-alert-menu-link">
             <div class="topbar-alert-menu-item-logo">
               <span class="icon-gray topbar-alert-menu-icon">
-                  <i class="icon-red ti-alert"></i>
+                  <i class="icon-gray ti-bell"></i>
               </span>
             </div>
-            <div class="topbar-alert-menu-item-text">
-                Load of file finished successfully
+            <div class="topbar-alert-menu-item-title">
+                Notifications
             </div>
           </a>
         </div>
@@ -86,6 +76,18 @@
           </a>
         </div>
         <div class="topbar-alert-menu-item">
+          <a class="topbar-alert-menu-link">
+            <div class="topbar-alert-menu-item-logo">
+              <span class="icon-gray topbar-alert-menu-icon">
+                  <i class="icon-red ti-alert"></i>
+              </span>
+            </div>
+            <div class="topbar-alert-menu-item-text">
+                Load of file finished successfully
+            </div>
+          </a>
+        </div>
+        <div class="topbar-alert-menu-footer">
           <a class="topbar-alert-menu-link">
             <div class="topbar-alert-menu-item-text">
                 View All Notifications

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange } from '@angular/core';
+import { SessionService } from '../../session.service';
 
 @Component({
   selector: 'app-topbar',
@@ -27,7 +28,7 @@ export class TopbarComponent implements OnInit, OnChanges {
   @Input()
   public counter : number;
 
-  constructor() { }
+  constructor(private session: SessionService) {}
 
   ngOnInit() {
   }
@@ -52,6 +53,15 @@ export class TopbarComponent implements OnInit, OnChanges {
     }
   }
 
+  public changeMenuAlerts(event: Event): void {
+    if (this.current_class_alerts === '-visible') {
+      this.current_class_alerts = '';
+    }
+    else {
+      this.current_class_alerts = '-visible';
+    }
+  }
+
   public hideMenuAlerts(event: Event): void {
     this.current_class_alerts = '';
   }
@@ -66,6 +76,10 @@ export class TopbarComponent implements OnInit, OnChanges {
 
   public showMenuSettings(event: Event): void {
     this.current_class_settings = '-visible';
+  }
+
+  public logout(event: Event) {
+    this.session.logout();
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {

@@ -4,10 +4,10 @@
 div.sidebar-expanded {
   z-index: 10;
   opacity: 1;
+  transition: width 0.5s linear 0s;
   height: 100vh;
   border-right: solid 1px #dddddd;
   font-size: 16px;
-  transition-delay: 0s;    
   color: #aaaaaa;
   background-color: #ffffff;
   clear:both;
@@ -22,10 +22,10 @@ div.sidebar-expanded {
 div.sidebar {
   z-index: 10;
   opacity: 1;
+  transition: width 0.2s linear 0s;
   height:100vh;
   background-color: #ffffff;
   position: fixed;
-  transition: visibility 0s linear 0.33s, opacity 0.33s linear;  
   border-right: solid 1px #dddddd;
   font-size: 16px;
   color: #aaaaaa;
@@ -88,6 +88,5 @@ ul.sidebar-menu {
   line-height: 35px;
   position: relative;
   text-align: center;
-  transition: all 0.3s ease;
   width: 35px;
 }
