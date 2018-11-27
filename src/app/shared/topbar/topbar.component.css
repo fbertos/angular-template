@@ -138,8 +138,8 @@ img.topbar-right-info {
 .topbar-user-menu {
   position: relative;
   visibility: hidden;
-  opacity: 0;
-  transition: width 0.5s linear 0s;
+  opacity: 1;
+  transition: visibility 0.5s linear 0s;
   left: 80%;
   top: -15px;
   height: 70px;
@@ -157,7 +157,7 @@ img.topbar-right-info {
   width: 160px;
   background: #ffffff;
   opacity: 1;
-  transition: width 0.5s linear 0s;
+  transition: visibility 0.5s linear 0s;
   border: 1px solid #dddddd;
 }
 
@@ -232,7 +232,7 @@ img.topbar-right-info {
   position: absolute;
   visibility: hidden;
   opacity: 1;
-  transition: width 0.5s linear 0s;
+  transition: visibility 0.5s linear 0s;
   left: 73%;
   top: 50px;
   width: 260px;
@@ -248,7 +248,7 @@ img.topbar-right-info {
   width: 260px;
   background: #ffffff;
   opacity: 1;
-  transition: width 0.5s linear 0s;
+  transition: visibility 0.5s linear 0s;
   border: 1px solid #dddddd;
 }
 
